@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>M.K Free AI Video Summarizer</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="container">
+
+    <h1>M.K Free AI Video <span class="highlight">Summarizer</span></h1>
+    <h2>Convert any video into smart summary using AI – 100% Free</h2>
+
+    <div class="upload-box">
+        <form method="POST" enctype="multipart/form-data">
+            <input type="file" name="video" required>
+            <br>
+            <button type="submit">Upload & Get FREE Summary</button>
+        </form>
+    </div>
+
+    {% if full_text %}
+    <div class="result">
+
+        <div class="box">
+            <h3>📄 Full Transcript</h3>
+            <p>{{ full_text }}</p>
+        </div>
+
+        <div class="box">
+            <h3>⚡ AI Summary</h3>
+            <p>{{ summary_text }}</p>
+        </div>
+
+    </div>
+    {% endif %}
+
+</div>
+
+</body>
+</html>
